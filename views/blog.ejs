@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/header.ejs') %>
+    <title><%= locals.blog.title %></title>
+</head>
+<body>
+    <%- include('./partials/navbar.ejs') %>
+
+    <div class="container mt-4">
+        <h1><%= locals.blog.title %></h1>
+        <p><%= locals.blog.description %></p>
+        <p>Last Modified at : <%= locals.blog.updatedAt %></p>
+        <p>written by : 
+            <img src="<%= locals.blog.author.profileImageUrl %>" class="img-fluid" width="50px" alt="cover image">
+            <%= locals.blog.author.fullname %>
+        </p>
+
+
+        <hr>
+        <img src="<%= locals.blog.coverImageURL %>" class="img-fluid" alt="cover image">
+
+        <hr>
+
+        <pre>
+            <%= locals.blog.body %>
+        </pre>
+    </div>
+</body>
+</html>

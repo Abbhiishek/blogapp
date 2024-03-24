@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/header.ejs') %>
+    <title>Khani Likho</title>
+</head>
+<body>
+    <%- include('./partials/navbar.ejs') %>
+
+
+    <div class="container">
+
+        <h1>All Blogs</h1>
+        <div class="row row-cols-4">
+            <% blogs.forEach(blog => { %>
+                <div class="col">
+                    <div class="card" style="width: 18rem;">
+                        <img src="<%= blog.coverImageURL  %>" class="card-img-top" alt="...">
+                        <div class="card-body">
+                          <h5 class="card-title"><%= blog.title  %></h5>
+                          <p class="card-text"><%= blog.description.slice(0,30)  %>..</p>
+                          <a href="/blog/<%= blog._id %>" class="btn btn-primary">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+</body>
+</html>

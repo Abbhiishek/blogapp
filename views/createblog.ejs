@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/header.ejs') %>
+    <title>Create a Blog</title>
+</head>
+<body>
+    <%- include('./partials/navbar.ejs') %>    
+
+    <div class="container mt-4">
+            <form method="POST" action="/blog/post" enctype="multipart/form-data">
+                <div class="mb-3">
+                  <label for="coverImage" class="form-label">Cover Image</label>
+                  <input type="file" class="form-control" name="coverImage">
+                </div>
+                <div class="mb-3">
+                  <label for="title" class="form-label">Title of blog</label>
+                  <input type="text" class="form-control" name="title">
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">description</label>
+                    <input type="text" class="form-control" name="description">
+                </div>
+                <div class="mb-3">
+                    <label for="body" class="form-label">body</label>
+                    <textarea type="text" class="form-control" name="body"></textarea> 
+                </div>
+                <button type="submit" class="btn btn-success">Publish Blog</button>
+              </form>
+    </div>
+</body>
+</html>
